@@ -22,12 +22,17 @@ public class UserController {
 		User resultUser=userService.login(user);
 		if(resultUser==null){
 			request.setAttribute("user", user);
-			request.setAttribute("errorMsg", "ÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+			request.setAttribute("errorMsg", "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 			return "index";
 		}else{
 			HttpSession session=request.getSession();
 			session.setAttribute("currentUser", resultUser);
 			return "redirect:/success.jsp";
 		}
+	}
+	
+	@RequestMapping("/index")
+	public String index(){
+		return "redirect:/login.jsp";
 	}
 }
