@@ -33,6 +33,6 @@ public class UserController {
 	
 	@RequestMapping("/index")
 	public String index(){
-		return "redirect:/login.jsp";
+		return "redirect:/index//login.jsp";
 	}
 }
